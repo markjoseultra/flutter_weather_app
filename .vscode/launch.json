@@ -1,0 +1,10 @@
+{
+  "configurations": [
+    {
+      "name": "Debug",
+      "request": "launch",
+      "type": "dart",
+      "toolArgs": ["--debug", "--dart-define", "OPEN_WEATHER_API_KEY=YOUR_KEY"]
+    }
+  ]
+}

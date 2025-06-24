@@ -1,0 +1,44 @@
+{
+  "coord": {
+    "lon": 121.0762,
+    "lat": 14.5839
+  },
+  "weather": [
+    {
+      "id": 804,
+      "main": "Clouds",
+      "description": "overcast clouds",
+      "icon": "04n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 297.47,
+    "feels_like": 298.41,
+    "temp_min": 297.47,
+    "temp_max": 297.47,
+    "pressure": 1009,
+    "humidity": 94,
+    "sea_level": 1009,
+    "grnd_level": 1006
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 1.15,
+    "deg": 228,
+    "gust": 1.45
+  },
+  "clouds": {
+    "all": 100
+  },
+  "dt": 1750697121,
+  "sys": {
+    "country": "PH",
+    "sunrise": 1750714102,
+    "sunset": 1750760859
+  },
+  "timezone": 28800,
+  "id": 1694579,
+  "name": "Pasig",
+  "cod": 200
+}
