@@ -4,11 +4,7 @@
       "name": "Debug",
       "request": "launch",
       "type": "dart",
-      "toolArgs": [
-        "--debug",
-        "--dart-define",
-        "OPEN_WEATHER_API_KEY=54df5cab4c4e511f92adf0344809e073"
-      ]
+      "toolArgs": ["--debug", "--dart-define", "OPEN_WEATHER_API_KEY=YOUR_KEY"]
     }
   ]
 }
