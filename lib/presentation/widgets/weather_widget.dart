@@ -12,7 +12,7 @@ class WeatherWidget extends StatelessWidget {
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraints) {
-          if (constraints.maxWidth > 400) {
+          if (constraints.maxWidth > 500) {
             return TabletScreenLayout(currentWeather: currentWeather);
           }
 
@@ -33,13 +33,12 @@ class MobileScreenLayout extends StatelessWidget {
     final currentDate = DateTime.fromMillisecondsSinceEpoch(
       (currentWeather.dt ?? 0) * 1000,
     );
-
+    print(MediaQuery.sizeOf(context).width);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-
           children: [
             SizedBox(
               width: 400,
@@ -95,9 +94,11 @@ class MobileScreenLayout extends StatelessWidget {
                 ],
               ),
             ),
-            if (MediaQuery.sizeOf(context).width < 400)
+            if (MediaQuery.sizeOf(context).width < 500)
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
                     "Today's Highlights",
@@ -106,38 +107,46 @@ class MobileScreenLayout extends StatelessWidget {
                       fontSize: 50.0,
                     ),
                   ),
-                  HighlightTile(
-                    title: "Wind Speed",
-                    value: "${currentWeather.wind?.speed} mph",
-                  ),
-                  HighlightTile(
-                    title: "Wind Gust",
-                    value: "${currentWeather.wind?.gust} mph",
-                  ),
-                  HighlightTile(
-                    title: "Wind Deg",
-                    value: "${currentWeather.wind?.deg}°",
-                  ),
-                  HighlightTile(
-                    title: "Visibility",
-                    value: "${currentWeather.visibility} m",
-                  ),
-                  HighlightTile(
-                    title: "Pressure",
-                    value: "${currentWeather.main?.pressure} mbar",
-                  ),
-
-                  HighlightTile(
-                    title: "Humidity",
-                    value: "${currentWeather.main?.humidity}%",
-                  ),
-                  HighlightTile(
-                    title: "Sea Level",
-                    value: "${currentWeather.main?.seaLevel} msl",
-                  ),
-                  HighlightTile(
-                    title: "Ground Level",
-                    value: "${currentWeather.main?.grndLevel} masl",
+                  SizedBox(
+                    height: 200,
+                    width: MediaQuery.sizeOf(context).width,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        HighlightTile(
+                          title: "Wind Speed",
+                          value: "${currentWeather.wind?.speed} mph",
+                        ),
+                        HighlightTile(
+                          title: "Wind Gust",
+                          value: "${currentWeather.wind?.gust} mph",
+                        ),
+                        HighlightTile(
+                          title: "Wind Deg",
+                          value: "${currentWeather.wind?.deg}°",
+                        ),
+                        HighlightTile(
+                          title: "Visibility",
+                          value: "${currentWeather.visibility} m",
+                        ),
+                        HighlightTile(
+                          title: "Pressure",
+                          value: "${currentWeather.main?.pressure} mbar",
+                        ),
+                        HighlightTile(
+                          title: "Humidity",
+                          value: "${currentWeather.main?.humidity}%",
+                        ),
+                        HighlightTile(
+                          title: "Sea Level",
+                          value: "${currentWeather.main?.seaLevel} msl",
+                        ),
+                        HighlightTile(
+                          title: "Ground Level",
+                          value: "${currentWeather.main?.grndLevel} masl",
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),

@@ -155,7 +155,7 @@ class Main {
 }
 
 class Wind {
-  double? speed;
+  int? speed;
   int? deg;
   double? gust;
 
