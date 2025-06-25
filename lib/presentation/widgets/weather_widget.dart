@@ -33,7 +33,7 @@ class MobileScreenLayout extends StatelessWidget {
     final currentDate = DateTime.fromMillisecondsSinceEpoch(
       (currentWeather.dt ?? 0) * 1000,
     );
-    print(MediaQuery.sizeOf(context).width);
+
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: SingleChildScrollView(
